@@ -19,16 +19,31 @@ config['headers']['Authorization'] = AUTHORIZATION
 
 url = 'https://composer.opera-api.com/api/v1/a-chat'
 
+conversation_id_file = 'conversation_id.txt'
+if os.path.exists(conversation_id_file):
+    with open(conversation_id_file, 'r') as f:
+        conversation_id = f.read().strip()
+else:
+    conversation_id = None
+
 while True:
     message = input('Escribe tu mensaje: ')
     
     if message.lower() == 'salir':
+        with open(conversation_id_file, 'w') as f:
+            f.write(conversation_id)
         break
+    
+    if message.lower() =='print':
+        print(data)
+    
+    if message.lower() == 'reset':
+        conversation_id = None
     
     data = {
         "stream": True,
         "linkify": False,
-        "conversation_id": None,
+        "conversation_id": conversation_id,
         "query": message
     }
     
@@ -42,6 +57,8 @@ while True:
                     data = json.loads(line[5:].strip())
                     if 'message' in data:
                         message += data['message']
+                    if 'conversation_id' in data:
+                        conversation_id = data['conversation_id']
                 except json.JSONDecodeError:
                     pass
         print('Respuesta del chat:', message)
