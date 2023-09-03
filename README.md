@@ -6,3 +6,7 @@ Simple chatbot with Aria.
 
 pip install -r requirements.txt  
 Bearer key >.env
+
+Usage:
+User: leave > Almacena actual conversation_id en conversation_id.txt , esto permite seguir con la conversación anterior.
+User: reset > Inicia un nuevo chat(conversation_id)

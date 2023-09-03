@@ -27,9 +27,9 @@ else:
     conversation_id = None
 
 while True:
-    message = input('Escribe tu mensaje: ')
+    message = input('User: ')
     
-    if message.lower() == 'salir':
+    if message.lower() == 'leave':
         with open(conversation_id_file, 'w') as f:
             f.write(conversation_id)
         break
@@ -47,7 +47,12 @@ while True:
         "query": message
     }
     
-    response = requests.post(url, headers=config['headers'], data=json.dumps(data))
+    try:
+        response = requests.post(url, headers=config['headers'], data=json.dumps(data))
+    except requests.exceptions.ChunkedEncodingError as e:
+        print(f'Error: {e}')
+        continue
+
     if response.status_code == 200:
         lines = response.text.split('\n')
         message = ''
@@ -61,7 +66,7 @@ while True:
                         conversation_id = data['conversation_id']
                 except json.JSONDecodeError:
                     pass
-        print('Respuesta del chat:', message)
+        print('Aria:', message)
         time.sleep(1)
     else:
         print(f'Error: {response.status_code}')
