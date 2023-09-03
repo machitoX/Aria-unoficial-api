@@ -9,4 +9,7 @@ Bearer key >.env
 
 Usage:
 User: leave > Almacena actual conversation_id en conversation_id.txt , esto permite seguir con la conversación anterior.
-User: reset > Inicia un nuevo chat(conversation_id)
+User: reset > Inicia un nuevo chat(conversation_id)  
+
+Se añadió Bot telegram
+/reset > Inicia nuveo chat
