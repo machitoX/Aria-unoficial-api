@@ -1,0 +1,22 @@
+
+{
+    "headers": {
+        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Language": "es-ES,es;q=0.9",
+        "Authorization": "TU_VALOR_DE_AUTHORIZATION",
+        "Connection": "keep-alive",
+        "Content-Type": "application/json",
+        "DNT": "1",
+        "Host": "composer.opera-api.com",
+        "Origin": "chrome-extension://igpdmclhhlcpoindmhkhillbfhdgoegm",
+        "Sec-Fetch-Dest": "empty",
+        "Sec-Fetch-Mode": "cors",
+        "Sec-Fetch-Site": "cross-site",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 OPR/101.0.0.0",
+        "X-Opera-Timezone": "-05:00",
+        "accept": "text/event-stream",
+        "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Opera\";v=\"101\", \"Chromium\";v=\"115\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\""
+    }
+}
